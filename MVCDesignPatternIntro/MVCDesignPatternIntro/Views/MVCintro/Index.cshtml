@@ -1,0 +1,40 @@
+﻿@using MVCDesignPatternIntro.Models;
+
+@{
+    Layout = null;
+
+    //Instantiate an instance of our model: UserData
+    UserData objUser = new UserData(Convert.ToInt32(ViewBag.UserID));
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form method="post" action="/MVCintro/index">
+        <div>
+            UserID: @ViewBag.UserID
+            <p />
+
+            Hello World 
+            <p />
+            Last Name: 
+            <input name="txtLastName" value="@ViewBag.LastName"type="text" />
+            <p />
+            <input name="txtLastName" value="@objUser.LastName"type="text" />
+            <p />
+            <input name="UserID" value= "@ViewBag.UserID" type="hidden" />
+            <input name="btnSubmit" value="Submit" type="submit" />
+            <br />
+            <input name="btnDelete" value="Delete" type="submit" />
+            <br />
+        </div>
+    </form>
+</body>
+</html>
